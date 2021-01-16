@@ -38,7 +38,7 @@ import 'package:r_flutter/src/model/i18n.dart';
 ///      case I18nKeys.hello:
 ///        return hello;
 ///    }
-///    return null;
+///    return "";
 ///  }
 ///}
 /// ```
@@ -49,16 +49,14 @@ DartClass generateI18nClass(I18nLocales i18n) {
 
   I18n(this._lookup);
 
-  static Locale _locale;
+  static Locale? _locale;
 
-  static Locale get currentLocale => _locale;
+  static Locale? get currentLocale => _locale;
 
   /// add custom locale lookup which will be called first
-  static I18nLookup customLookup;
+  static I18nLookup? customLookup;
 
   static const I18nDelegate delegate = I18nDelegate();
-
-  static I18n of(BuildContext context) => Localizations.of<I18n>(context, I18n);
 
 """);
 
@@ -159,7 +157,7 @@ String _generateGetStringMethod(I18nLocales i18n) {
   final code = StringBuffer();
   code
     ..writeln(
-        "  String getString(String key, [Map<String, String> placeholders]) {")
+        "  String? getString(String key, [Map<String, String> placeholders]) {")
     ..writeln("    switch (key) {");
 
   final values = i18n.defaultValues.strings;
@@ -177,7 +175,7 @@ String _generateGetStringMethod(I18nLocales i18n) {
           methodName.write(", ");
         }
         isFirstPlaceholder = false;
-        methodName.write("placeholders[\"$placeholder\"]");
+        methodName.write("placeholders[\"$placeholder\"]!");
       }
       methodName.write(")");
     }
@@ -187,7 +185,7 @@ String _generateGetStringMethod(I18nLocales i18n) {
       ..writeln("        return $methodName;");
   }
 
-  code..writeln("    }")..writeln("    return null;")..writeln("  }");
+  code..writeln("    }")..writeln("    return "";")..writeln("  }");
   return code.toString();
 }
 
