@@ -185,7 +185,7 @@ String _generateGetStringMethod(I18nLocales i18n) {
       ..writeln("        return $methodName;");
   }
 
-  code..writeln("    }")..writeln("    return \"\";")..writeln("  }");
+  code..writeln("    }")..writeln("    return '';")..writeln("  }");
   return code.toString();
 }
 
