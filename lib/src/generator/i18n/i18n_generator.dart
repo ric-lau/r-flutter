@@ -33,7 +33,7 @@ import 'package:r_flutter/src/model/i18n.dart';
 ///    return customLookup?.hello ?? _lookup.hello;
 ///  }
 ///
-///  String getString(String key, [Map<String, String> placeholders]) {
+///  String getString(String key, [Map<String, String> placeholders = const {}]) {
 ///    switch (key) {
 ///      case I18nKeys.hello:
 ///        return hello;
@@ -157,7 +157,7 @@ String _generateGetStringMethod(I18nLocales i18n) {
   final code = StringBuffer();
   code
     ..writeln(
-        "  String? getString(String key, [Map<String, String> placeholders]) {")
+        "  String? getString(String key, [Map<String, String> placeholders = const {}]) {")
     ..writeln("    switch (key) {");
 
   final values = i18n.defaultValues.strings;
