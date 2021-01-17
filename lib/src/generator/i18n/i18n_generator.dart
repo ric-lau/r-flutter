@@ -9,10 +9,16 @@ import 'package:r_flutter/src/model/i18n.dart';
 ///
 ///  I18n(this._lookup);
 ///
-///  static Locale locale;
+///  static Locale? locale;
+///
+///  static Locale? get currentLocale => locale;
 ///
 ///  /// add custom locale lookup which will be called first
 ///  static I18nLookup customLookup;
+///
+///  static const I18nDelegate delegate = I18nDelegate();
+///
+///  static I18n of(BuildContext context) => Localizations.of<I18n>(context, I18n);
 ///
 ///  static List<Locale> get supportedLocales {
 ///    return const <Locale>[
@@ -45,8 +51,12 @@ DartClass generateI18nClass(I18nLocales i18n) {
 
   static Locale? locale;
 
+  static Locale? get currentLocale => locale;
+
   /// add custom locale lookup which will be called first
   static I18nLookup? customLookup;
+
+  static const I18nDelegate delegate = I18nDelegate();
 
 """);
 
@@ -60,7 +70,7 @@ DartClass generateI18nClass(I18nLocales i18n) {
 
 String _generateSupportedLocales(I18nLocales i18n) {
   final code =
-      StringBuffer("""  static List<Locale> get supportedLocales {
+  StringBuffer("""  static List<Locale> get supportedLocales {
     return const <Locale>[
 """);
 
@@ -88,10 +98,10 @@ String _generateAccessorMethods(I18nLocales i18n) {
     final methodCall = _stringValueMethodName(value);
     code.write(_genrateAccessorMethodComment(i18n, value));
     code.writeln(generateMethod(
-            name: value.escapedKey,
-            parameters: value.placeholders,
-            code:
-                "    return customLookup?.$methodCall ?? _lookup.$methodCall;"));
+        name: value.escapedKey,
+        parameters: value.placeholders,
+        code:
+        "    return customLookup?.$methodCall ?? _lookup.$methodCall;"));
   }
 
   return code.toString();
