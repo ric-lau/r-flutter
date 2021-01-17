@@ -46,7 +46,7 @@ DartClass generateI18nDelegate(I18nLocales locales) {
 
   @override
   Future<I18n> load(Locale locale) {
-    I18n._locale = locale;
+    I18n.locale = locale;
     return SynchronousFuture<I18n>(I18n(_findLookUpFromLocale(locale)));
   }
 

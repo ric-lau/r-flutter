@@ -51,8 +51,6 @@ DartClass generateI18nClass(I18nLocales i18n) {
 
   static Locale? locale;
 
-  static Locale? get currentLocale => locale;
-
   /// add custom locale lookup which will be called first
   static I18nLookup? customLookup;
 
