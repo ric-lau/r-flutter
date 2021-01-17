@@ -4,7 +4,6 @@
     <list default="true" id="2afc39f0-a9c7-4294-be37-bbf898a02d77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/generator/i18n/i18n_generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator/i18n/i18n_generator.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/generator/i18n/lookup_generator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/generator/i18n/lookup_generator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,9 +42,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="640" y="311" width="615" height="490" key="find.popup" timestamp="1610782331909">
-      <screen x="0" y="25" width="1920" height="1055" />
+    <state x="-1280" y="311" width="615" height="490" key="find.popup" timestamp="1610882643335">
+      <screen x="-1920" y="25" width="1920" height="1055" />
     </state>
+    <state x="-1280" y="311" width="615" height="490" key="find.popup/-1920.25.1920.1055/0.25.1016.721@-1920.25.1920.1055" timestamp="1610882643335" />
     <state x="640" y="311" width="615" height="490" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1610782331909" />
   </component>
 </project>
