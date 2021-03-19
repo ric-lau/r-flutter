@@ -7,13 +7,13 @@ environment:
   sdk: '>=2.3.0 <3.0.0'
 
 dependencies:
-  args: '>=0.12.1 <2.0.0'
-  dart_style: ^1.0.0
-  path: '>=0.9.0 <2.0.0'
-  yaml: ^3.0.0
-  recase: ^2.0.1
-  build: ^2.0.0
-  build_config: ^0.4.0
+  args: any
+  dart_style: any
+  path: any
+  yaml: any
+  recase: any
+  build: any
+  build_config: any
 
 dev_dependencies:
   test: any
